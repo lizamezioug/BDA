@@ -1,4 +1,3 @@
-
 # 🚆 Advanced Databases Project – Smart City Transport System
 
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
@@ -7,12 +6,11 @@
 ![Oracle](https://img.shields.io/badge/Oracle-F80000?style=for-the-badge&logo=oracle&logoColor=white)
 ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
 
----
 
 ## 👩‍💻 About the Project
 
 This project was developed as part of the **Advanced Databases (BDA)** course.  
-It provides a **web interface to execute and visualize queries** on **two types of databases**:
+It provides a **Full-Stack web interface** to **execute and visualize queries** on **two types of databases**:
 
 1. **SQL3 (Oracle)** – relational-object model  
 2. **NoSQL (MongoDB)** – document-oriented model  
@@ -25,37 +23,22 @@ The system simulates a **smart city urban transport network**, including:
 - Shuttles performing multiple trips with tracking: duration, date, passengers, observations  
 - Travel time estimation via **CalculerDurée**  
 
-The interface allows selecting queries from a **menu**, executing them, and viewing results interactively.
+The interface allows selecting queries from a **menu**, executing them, and viewing results interactively.  
+**Pre-fill scripts** are provided to populate DBs ( SQL3 and MongoDB) before executing queries.
 
----
+
 
 ## 🛠 Features & Functionality
 
-- **Two database models**:  
-  - Part I: SQL3 (Oracle)  
-  - Part II: MongoDB  
-- Clear, user-friendly displays and messages  
+- **Two database models**: SQL3 (Oracle) & MongoDB  
+- Clear, user-friendly displays  
 - **Interactive menu** to select queries  
 - Execute queries with **one click**  
-- Display results dynamically in tables/cards  
-- **Pre-fill scripts** to populate both SQL and NoSQL databases before execution  
-- Frontend built with **React + Tailwind CSS**  
-- Backend using **Node.js + Express.js**  
-- Connects seamlessly with both **SQL3 and MongoDB**  
-
----
-
-## 🖥 Demo
-
-![BDA Demo](assets/demo.gif)
-
-**Demo description**:  
-- Navbar to choose SQL3 or MongoDB  
-- Cards for each query  
-- Click a card to see the query  
-- Execute with a button and view results  
-
-> ⚡ Replace the GIF with your own demo for live visualization
+- Display results dynamically 
+- **Full-Stack interface** using React + Tailwind CSS + Node.js + Express.js  
+- Seamless connection to **SQL3 and MongoDB**  
+- Pre-fill scripts for database initialization  
+- **Dynamic execution** and visualization of queries  
 
 ---
 
@@ -84,103 +67,35 @@ npm install
 
 3. **Configure databases**
 
-* **Oracle SQL3**:
-
-  * Ensure Oracle 11g is installed locally
-  * Update `db-sql3.js` with your credentials and TableSpaces
-* **MongoDB**:
-
-  * Ensure MongoDB is running at `mongodb://127.0.0.1:27017`
-  * Database: `smartcity`
+* **Oracle SQL3**: Ensure Oracle 11g is installed locally and update `db-sql3.js` with your credentials.
+* **MongoDB**: Ensure MongoDB is running at `mongodb://127.0.0.1:27017` with database `smartcity`.
 
 4. **Populate databases**
 
 ```bash
-# Run provided scripts to pre-fill SQL3 and MongoDB with realistic data
+# Run the provided scripts to pre-fill SQL3 and MongoDB with realistic data
 ```
 
-5. **Start backend server**
+5. **Run the full-stack application**
 
 ```bash
-node index.js
+npm run dev
 ```
 
-6. **Start frontend**
-
-```bash
-cd client
-npm start
-```
-
-7. Open [http://localhost:3000](http://localhost:3000)
+* This starts the **React frontend (Vite)** and **Node.js backend**.
+* Open your browser at: [http://localhost:5173/](http://localhost:5173/) to access the interface.
 
 ---
 
 ## 🔍 Usage
 
-* Use **navbar** to select SQL3 or MongoDB
-* Click a **query card** to view the query text
-* Click **Execute** to run the query
-* Results are displayed dynamically
-* Example queries:
+**How to execute queries:**
 
-  * List trips with issues (panne, retard, accident)
-  * Lines with main stations
-  * Shuttles with max trips
-  * Stations with multiple transport modes
-  * Aggregate trips per line
+1. Use the **navbar** to select either **SQL3 (Oracle)** or **MongoDB**.
+2. Click a **query card** to view the full query.
+3. Press **Execute** to run the query on the selected database.
+4. View results dynamically.
 
----
 
-## 📌 Code Snippets
-
-**MongoDB connection**
-
-```javascript
-import { MongoClient } from "mongodb";
-
-const client = new MongoClient("mongodb://127.0.0.1:27017");
-const dbName = "smartcity";
-let db;
-
-async function getMongoDB() {
-  if (!db) {
-    await client.connect();
-    db = client.db(dbName);
-  }
-  return db;
-}
-
-export default getMongoDB;
-```
-
-**Oracle SQL3 connection**
-
-```javascript
-import oracledb from 'oracledb';
-
-export async function getOracleConnection() {
-  return await oracledb.getConnection({
-    user: 'SQL3',
-    password: 'password',
-    connectString: 'localhost/XEPDB1'
-  });
-}
-```
-
----
-
-## 📈 Project Status
-
-![GitHub repo size](https://img.shields.io/github/repo-size/<your-username>/BDA-Project)
-![GitHub contributors](https://img.shields.io/github/contributors/<your-username>/BDA-Project)
-![GitHub stars](https://img.shields.io/github/stars/<your-username>/BDA-Project?style=social)
-![GitHub forks](https://img.shields.io/github/forks/<your-username>/BDA-Project?style=social)
-
-* ✅ Backend connected to Oracle SQL3 & MongoDB
-* ✅ Frontend with React + Tailwind CSS
-* ✅ Query execution and result display
-* ✅ Pre-fill scripts for databases
-* 🚧 Future improvements: authentication, enhanced UI/UX, advanced visualizations
 
 
