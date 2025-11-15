@@ -1,13 +1,4 @@
-Parfait ! 😄 Voici une **version finale ultra-pro et complète** du README pour ton projet BDA, avec :
 
-* Badges GitHub (stats, stars, forks, issues)
-* Section démo visuelle (GIF/screenshot)
-* Style clair et attractif pour GitHub
-* Explication complète du projet, technologies, et usage
-
----
-
-````md
 # 🚆 Advanced Databases Project – Smart City Transport System
 
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
