@@ -55,8 +55,8 @@ The interface allows selecting queries from a **menu**, executing them, and view
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/<your-username>/BDA-Project.git
-cd BDA-Project
+git clone https://github.com/<your-username>/BDA.git
+cd BDA
 ````
 
 2. **Install Node.js dependencies**
